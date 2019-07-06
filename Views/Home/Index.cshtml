@@ -1,0 +1,51 @@
+﻿
+            <br>
+            <h1 class="text-center">Welcome!</h1>
+            <br>
+            <br>
+
+        <div class="container d-flex justify-content-around">
+            <div class="registration">
+                <form action="create" method="POST">
+                    @model IndexViewModel
+                    <h2>Registration</h2>
+                    <br>
+                    <span style="color: red;" asp-validation-for="NewUser.FName"></span>
+                    <input class="form-control" asp-for="NewUser.FName" placeholder="First Name">
+                    <br>
+                    <span style="color: red;" asp-validation-for="NewUser.LName"></span>
+                    <input class="form-control" asp-for="NewUser.LName" placeholder="Last Name">
+                    <br>
+                    <span style="color: red;" asp-validation-for="NewUser.Email"></span>
+                    <input class="form-control" asp-for="NewUser.Email" placeholder="Email">
+                    <br>
+                    <span style="color: red;" asp-validation-for="NewUser.Password"></span>
+                    <input class="form-control" asp-for="NewUser.Password" placeholder="Password">
+                    <br>
+                    <span style="color: red;" asp-validation-for="NewUser.PasswordConfirm"></span>
+                    <input class="form-control"
+                    asp-for="NewUser.PasswordConfirm"  placeholder="Confirm Password">
+                    <br>
+                    <input type="submit" class="btn btn-primary">
+                </form>
+            </div>
+            <div class="login d-inline-block">
+                <form action="login" method="POST">
+                    <h3>Login</h3>
+                    <br>
+                    <div class="form-group">
+                        <span style="color: red;" asp-validation-for="OldUser.Email"></span>
+                        <input asp-for="OldUser.Email" class="form-control"  aria-describedby="emailHelp"
+                            placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <span style="color: red;" asp-validation-for="OldUser.Password"></span>
+                        <input asp-for="OldUser.Password" class="form-control" placeholder="Password">
+                        <br>
+                        <input type="submit" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
